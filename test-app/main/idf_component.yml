@@ -1,12 +1,2 @@
 dependencies:
   idf: ">=5.5"
-  esp-swift-hbridge:
-    git: "https://github.com/nixit22/esp-swift-hbridge.git"
-  esp-swift-mcpwm:
-    git: "https://github.com/nixit22/esp-swift-mcpwm.git"
-  esp-swift-gpio:
-    git: "https://github.com/nixit22/esp-swift-gpio.git"
-  esp-swift-platform:
-    git: "https://github.com/nixit22/esp-swift-platform.git"
-  esp-swift-support:
-    git: "https://github.com/nixit22/esp-swift-support.git"

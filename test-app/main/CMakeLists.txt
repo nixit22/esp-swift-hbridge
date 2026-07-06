@@ -25,7 +25,7 @@ idf_component_register(
         "main.swift"
         "TestHBridge.swift"
     INCLUDE_DIRS "."
-    REQUIRES esp-swift-hbridge esp-swift-mcpwm esp-swift-gpio esp-swift-platform esp-swift-support
+    REQUIRES esp-swift-hbridge
 )
 
 swift_configure(
