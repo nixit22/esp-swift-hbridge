@@ -1,0 +1,14 @@
+name: esp-swift-hbridge
+version: "0.1.0"
+description: "DRV8833-style single-channel H-bridge DC motor driver for Swift (IN/IN PWM + nSLEEP/nFAULT)"
+url: "https://github.com/nixit22/esp-swift-hbridge"
+dependencies:
+  idf: ">=5.5"
+  esp-swift-platform:
+    git: "https://github.com/nixit22/esp-swift-platform.git"
+  esp-swift-mcpwm:
+    git: "https://github.com/nixit22/esp-swift-mcpwm.git"
+  esp-swift-gpio:
+    git: "https://github.com/nixit22/esp-swift-gpio.git"
+  esp-swift-support:
+    git: "https://github.com/nixit22/esp-swift-support.git"
