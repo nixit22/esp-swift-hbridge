@@ -58,7 +58,7 @@ public struct HBridge: ~Copyable {
         nSleepGpio: gpio_num_t,
         nFaultGpio: gpio_num_t? = nil,
         pwmFrequencyHz: UInt32 = 20_000
-    ) throws(Error) {
+    ) throws(PlatformError) {
         let periodTicks = 1_000_000 / pwmFrequencyHz
         let timer = McpwmTimer(resolutionHz: 1_000_000, periodTicks: periodTicks)
         let oper = try timer.newOperator()
@@ -102,7 +102,7 @@ public struct HBridge: ~Copyable {
     }
 
     /// Drive the motor. `dutyPercent` is clamped to 0...100; 0 behaves like `coast()`.
-    public func drive(direction: Direction, dutyPercent: Float) throws(Error) {
+    public func drive(direction: Direction, dutyPercent: Float) throws(PlatformError) {
         let clamped = min(max(dutyPercent, 0), 100)
         let ticks = UInt32(clamped / 100 * Float(periodTicks))
         try cmpr.setCompareValue(ticks)
@@ -117,24 +117,24 @@ public struct HBridge: ~Copyable {
     }
 
     /// Both legs high — shorts motor terminals (active braking).
-    public func brake() throws(Error) {
+    public func brake() throws(PlatformError) {
         try genIn1.setForceLevel(1)
         try genIn2.setForceLevel(1)
     }
 
     /// Both legs low — high-impedance, motor coasts to a stop.
-    public func coast() throws(Error) {
+    public func coast() throws(PlatformError) {
         try genIn1.setForceLevel(0)
         try genIn2.setForceLevel(0)
     }
 
     /// Drive nSLEEP high (wake from standby).
-    public func wake() throws(Error) {
+    public func wake() throws(PlatformError) {
         try nSleep.set(level: true)
     }
 
     /// Drive nSLEEP low (standby — motor coasts, low power).
-    public func sleep() throws(Error) {
+    public func sleep() throws(PlatformError) {
         try nSleep.set(level: false)
     }
 
