@@ -4,6 +4,24 @@ Swift driver for a single DC motor driven through a DRV8833-style H-bridge in IN
 
 Depends on: `SwiftPlatform`, `SwiftMCPWM`, `SwiftGPIO`, `SwiftSupport`.
 
+## Adding it to a project
+
+This is a [SwiftPM](https://www.swift.org/package-manager/) package, built for ESP-IDF by
+`swift_package()` from [esp-swift-support](https://github.com/nixit22/esp-swift-support). In your
+app's `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/nixit22/esp-swift-hbridge.git", branch: "SPM"),
+],
+targets: [
+    .target(name: "App", dependencies: [.product(name: "HBridge", package: "esp-swift-hbridge")]),
+]
+```
+
+See esp-swift-support's README for the project setup (top-level `CMakeLists.txt`, `main`
+component, Swift toolchain).
+
 ## Usage
 
 ```swift

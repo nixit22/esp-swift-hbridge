@@ -8,7 +8,7 @@ Depends on: `SwiftPlatform`, `SwiftMCPWM`, `SwiftGPIO`, `SwiftSupport`
 
 | File | Role |
 |---|---|
-| `src/HBridge.swift` | `HBridge` struct — the public Swift API |
+| `Sources/HBridge/HBridge.swift` | `HBridge` struct — the public Swift API |
 
 ## Public API
 
