@@ -30,7 +30,7 @@ let package = Package(
         .library(name: "HBridge", targets: ["HBridge"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/nixit22/esp-swift-platform.git", from: "0.1.0"),
+        .package(url: "https://github.com/nixit22/esp-swift-platform.git", from: "0.2.0"),
         .package(url: "https://github.com/nixit22/esp-swift-mcpwm.git", from: "0.1.0"),
         .package(url: "https://github.com/nixit22/esp-swift-gpio.git", from: "0.1.0"),
     ],
